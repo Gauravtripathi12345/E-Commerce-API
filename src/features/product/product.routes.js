@@ -5,11 +5,11 @@ import express from 'express';
 import ProductController from './product.controller.js';
 
 // 2. Initialize Express router.
-const router = express.Router();
+const productRouter = express.Router();
 
 const productController = new ProductController();
 // All the paths to controller methods.
-router.get("/", productController.getAllProducts);
-router.post("/", productController.addProduct);
+productRouter.get("/", productController.getAllProducts);
+productRouter.post("/", productController.addProduct);
 
-export default router;
+export default productRouter;
