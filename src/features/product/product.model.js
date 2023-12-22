@@ -9,13 +9,18 @@ export default class ProductModel {
         this.price = price;
     }
 
+    static get(id) {
+        const product = products.find((i) => i.id == id);
+        return product;
+    }
+
     static add(product) {
         product.id = products.length + 1;
         products.push(product);
         return product;
     }
 
-    static GetAll() {
+    static getAll() {
         return products;
     }
 }
